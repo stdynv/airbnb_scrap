@@ -14,7 +14,6 @@ def load_data():
     try : 
         DATA_URL = f'http://127.0.0.1:5000/{destination}'
         data = pd.read_csv('airbnb.csv')
-        data.drop(['_id'],axis=1,inplace=True)
         return data
     except Exception as ex : 
         st.exception(ex)
