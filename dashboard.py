@@ -1,6 +1,5 @@
 import streamlit as st 
 import pandas as pd
-import plotly.express as px
 
 st.title('AIRBNB DATASET ')
 option = st.selectbox(
@@ -47,15 +46,5 @@ def filter_daset() :
     data_csv = convert_df(df_filtred)
     download_data = st.sidebar.download_button('Download Data',data=data_csv,mime='text/csv')
 filter_daset()
- 
 
-
-
-
-chart = px.bar(df,x='Allowed Guests')
-fig = px.density_heatmap(df, x="Allowed Guests", y="Price per Night",text_auto=True)
-st.plotly_chart(fig)
-
-violon = px.violin(df, y="Price per Night",box=True)
-st.plotly_chart(violon)
 
